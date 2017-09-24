@@ -1,5 +1,6 @@
 server {
-	listen 80 default_server;
+	include /etc/nginx/sites-available/IU7_web_lab02_listen.conf;
+
 	location / {
 		proxy_pass http://localhost:8080;
 	}
