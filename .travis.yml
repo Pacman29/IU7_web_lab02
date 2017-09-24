@@ -1,0 +1,19 @@
+sudo: required
+dist: trusty
+language: node_js
+node_js:
+  - 7
+branches:
+  only:
+  - master
+  -  development
+
+services:
+  - docker
+
+instal: true
+
+script:
+  - docker login --username=_ --password=$(echo $API_KEY) registry.heroku.com
+  - docker build -t registry.heroku.com/web-lab02/web .
+  - docker push registry.heroku.com/web-lab02/web
