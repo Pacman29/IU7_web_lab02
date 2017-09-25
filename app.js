@@ -15,6 +15,23 @@ app.get('/',function (req,res) {
     res.sendFile(__dirname+'/public/templates/hack.txt');
 });
 
+app.get('/filenorm',function (req,res) {
+    fs.readFile(__dirname+'/public/templates/hack.txt', 'utf8', function(err, data) {
+        if (err) {
+
+            console.log('Could not find or open file for reading\n');
+        } else {
+            res.writeHead(200, {
+                'Content-Type':
+
+                    'text/html'
+            });
+
+            res.end(data);
+        }
+    })
+});
+
 app.get('/hack', function (req,res) {
     res.render('index')
 });
