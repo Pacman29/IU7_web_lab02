@@ -8,3 +8,13 @@
     <h1>hack.html</h1>
 </body>
 </html>
+
+
+methods:
+
+app.get('/')
+app.get('/getfile')
+app.get('/filenorm')
+app.get('/hack')
+
+app.post('/tofile')

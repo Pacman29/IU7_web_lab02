@@ -39,7 +39,9 @@ app.get('/hack', function (req,res) {
 app.post('/tofile', function (req,res) {
     let pathtofile = __dirname+'/public/file/test.txt';
 
-    fs.writeFile(pathtofile,req.body, (err) => {
+
+
+    fs.writeFile(pathtofile,JSON.stringify(req.body), (err) => {
         if (err) throw err;
     });
 
